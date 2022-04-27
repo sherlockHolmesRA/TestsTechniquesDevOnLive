@@ -13,7 +13,14 @@ public class Factorial {
 	}
 	
 	public static int factorial2(int n) {
-		int res = IntStream.rangeClosed(2, n).reduce(1, (x, y) -> x * y);
+		int res = 1;
+		if (n <= 1) {
+		     return 1;
+		  }
+		  else {
+			  res = IntStream.rangeClosed(2, n).reduce(1, (x, y) -> x * y);
+			  //res = IntStream.rangeClosed(2, n).reduce((x, y) -> x * y).getAsInt();
+		  }
 		return res;
 	}
 	
